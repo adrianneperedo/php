@@ -28,6 +28,6 @@ $result = $db->query($sql);
 			<td><?php echo $row['isbn']; ?></td>
 		</tr>
 		<?php } ?>
-	</table>
+</table>
 </body>
 </html>
