@@ -27,7 +27,7 @@ EOBREAKFAST;
 $greeting = 'good morning citizen';
 //Do not insert tab or indention in heredoc
 
-//VARIABLE DECLARATIONS
+//VARIABLE DECLARATION
 ?>
 
 	<h1>PRINTING STRINGS</h1>
@@ -103,5 +103,7 @@ $greeting = 'good morning citizen';
 		    <?php 
 		    echo implode(',', $array);
 		     ?>
+
+		     
 </body>
 </html>
