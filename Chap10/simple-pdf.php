@@ -1,7 +1,8 @@
 <?php
-require("fpdf/fpdf.php"); // path to fpdf.php
+require("fpdf/fpdf.php"); 
 $pdf = new FPDF();
 $pdf->addPage();
-$pdf->setFont("Arial", 'B', 16);
-$pdf->cell(40, 10, "Hello Out There!");
+$pdf->setFont("Arial", 'B', 20);
+$pdf->cell(40, 10, "Yo, What's Up!");
 $pdf->output();
+?>
