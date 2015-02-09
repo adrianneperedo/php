@@ -1,9 +1,5 @@
 <?php
-$db = new mysqli("localhost", "root", "klabklab", "phpDB");
-// make sure the above credentials are correct for your environment
-if ($db->connect_error) {
-	die("Connect Error ({$db->connect_errno}) {$db->connect_error}");
-}
+include('conn.php');
 $sql = "SELECT * FROM books ORDER BY title";
 $result = $db->query($sql);
 ?>
@@ -20,12 +16,16 @@ $result = $db->query($sql);
 			<td align="center">Title</td>
 			<td align="center">Year Published</td>
 			<td align="center">ISBN</td>
+			<td align="center">Action</td>
 		</tr>
 		<?php while ($row = $result->fetch_assoc()) { ?>
 		<tr>
-			<td><?php echo stripslashes$(row['title']); ?></td>
+			<td><?php echo $row['title']; ?></td>
 			<td align="center"><?php echo $row['year_published']; ?></td>
 			<td><?php echo $row['isbn']; ?></td>
+			<td> 
+				<a href="edit.php?id=<?php echo $row['id'] ?>">Edit</a> |
+				<a href="delete.php?id=<?php echo $row['id']?>" onclick="return confirm('Are you sure you want to delete this book?');">Delete</a>
 		</tr>
 		<?php } ?>
 </table>
