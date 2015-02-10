@@ -28,6 +28,7 @@ $result = $db->query($sql);
 				<a href="delete.php?id=<?php echo $row['id']?>" onclick="return confirm('Are you sure you want to delete this book?');">Delete</a>
 		</tr>
 		<?php } ?>
-</table>
+	</table>
+	<a href="add.php" style="text-align:center;"><h2>Add Books</h2></a>
 </body>
 </html>
