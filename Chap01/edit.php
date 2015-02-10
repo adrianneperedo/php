@@ -2,6 +2,9 @@
 	include('conn.php');
 
 	$id = $_GET['id'];
+
+	session_start();
+	$_SESSION['id'] = $id;
 	
 	$sql = "SELECT * FROM books WHERE id =$id";
 	$result = $db->query($sql);
@@ -23,7 +26,7 @@
  	<title>Edit Books</title>
  </head>
  <body>
- 	<form action="" method="post">
+ 	<form action="update.php" method="post">
  		<h1>Edit Books</h1>
  		
  		<label for="title">Title:</label><br>
@@ -36,9 +39,7 @@
 		<input type="text" name="isbn" id="isbn" value="<?php echo $isbn ?>"><br><br>
 
 		<input type="submit" value="SAVE">
-		<input type="button" value="CANCEL" onclick="window.location='booklist.php';">
+		<input type="button" value="CANCEL" onclick="window.location='booklist.php';return false;">
  	</form>
-
-
  </body>
  </html>
