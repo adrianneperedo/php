@@ -1,6 +1,5 @@
 <?php 
 	include('conn.php');
-	include('../error-reporting.php');
 
 	$id = $_GET['id'];
 	
@@ -37,7 +36,7 @@
 		<input type="text" name="isbn" id="isbn" value="<?php echo $isbn ?>"><br><br>
 
 		<input type="submit" value="SAVE">
-		<input type="button" value="CANCEL">
+		<input type="button" value="CANCEL" onclick="window.location='booklist.php';">
  	</form>
 
 
